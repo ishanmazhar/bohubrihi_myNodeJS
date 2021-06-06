@@ -2,11 +2,21 @@
 
 // console.log(area(4));
 
-const fs = require('fs');
+// const fs = require('fs');
 
-let text = fs.readFileSync('./files/input.txt', 'utf-8');
-console.log(text); 
+// let text = fs.readFileSync('./files/input.txt', 'utf-8');
+// console.log(text); 
 
-let outputText = `Output Text: ${text}`; 
+// let outputText = `Output Text: ${text}`; 
 
-fs.writeFileSync('./files/output.txt', outputText); 
+// fs.writeFileSync('./files/output.txt', outputText); 
+
+const EventEmitter = require('events');
+
+const emitter = new EventEmitter();
+
+emitter.on('event1', () => {        // emitter.on() ---> defines an event
+    console.log('Event 1 Called!')
+})
+
+emitter.emit('event1')          // emitter.emit() ---> calls an event
